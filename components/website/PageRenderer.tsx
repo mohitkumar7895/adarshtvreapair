@@ -225,48 +225,51 @@ function Section({ section, extras, homeVariant }: { section: PageSection; extra
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-5 lg:grid-cols-4">
             {services.map((service, i) => (
               <Reveal key={service.id} delay={i * 60}>
                 <Link
                   href={`/tv-repair/${service.slug}`}
                   prefetch={true}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/ hover:shadow-xl hover:shadow-emerald-500/"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10"
                 >
-                  <div className="relative aspect-4/3 overflow-hidden bg-slate-100 p-2">
+                  <div className="relative aspect-4/3 overflow-hidden bg-slate-100 p-1.5 sm:p-2">
                     {service.image_url ? (
                       <CmsImage
                         src={service.image_url}
                         alt={service.name}
-                        className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-contain p-1 sm:p-2 transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                       />
                     ) : (
-                      <div className="flex h-full w-full items-center justify-center text-3xl font-bold text-slate-300">
+                      <div className="flex h-full w-full items-center justify-center text-xl sm:text-3xl font-bold text-slate-300">
                         TV
                       </div>
                     )}
-                    <span className="absolute top-3 left-3 rounded-md bg-slate-900/80 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-sm">
+                    <span className="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 rounded sm:rounded-md bg-slate-900/80 px-1.5 py-0.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-emerald-300 backdrop-blur-sm">
                       Repairs
                     </span>
                   </div>
 
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="font-display text-lg font-bold text-slate-900 transition group-hover:text-emerald-600">
-                      {service.name}
-                    </h3>
-                    {service.short_description ? (
-                      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                        {service.short_description}
-                      </p>
-                    ) : null}
+                  <div className="flex flex-1 flex-col justify-between p-2.5 sm:p-5">
+                    <div>
+                      <h3 className="font-display text-xs sm:text-lg font-bold text-slate-900 transition group-hover:text-emerald-600 line-clamp-2 leading-snug sm:leading-normal">
+                        {service.name}
+                      </h3>
+                      {service.short_description ? (
+                        <p className="mt-1 sm:mt-2 line-clamp-2 text-[10px] sm:text-sm leading-tight sm:leading-relaxed text-slate-600">
+                          {service.short_description}
+                        </p>
+                      ) : null}
+                    </div>
 
-                    <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-3">
-                      <span className="text-xs font-bold text-emerald-600 group-hover:underline">
-                        View Service & Pricing
+                    <div className="mt-2 sm:mt-5 flex items-center justify-between border-t border-slate-100 pt-2 sm:pt-3">
+                      <span className="text-[10px] sm:text-xs font-bold text-emerald-600 group-hover:underline truncate">
+                        View Pricing
                       </span>
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 transition-transform group-hover:translate-x-1 group-hover:bg-emerald-600 group-hover:text-white">
-                        <ArrowUpRight size={14} />
+                      <span className="flex h-5 w-5 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 transition-transform group-hover:translate-x-0.5 group-hover:bg-emerald-600 group-hover:text-white">
+                        <ArrowUpRight size={10} className="sm:hidden" />
+                        <ArrowUpRight size={14} className="hidden sm:block" />
                       </span>
                     </div>
                   </div>
@@ -328,17 +331,17 @@ function Section({ section, extras, homeVariant }: { section: PageSection; extra
             <p className="mt-2 max-w-xl text-xs leading-relaxed text-slate-300 sm:text-sm">
               {str("body")}
             </p>
-            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:items-center">
+            <div className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:items-center sm:gap-3">
               <SiteLink
                 href={str("primaryHref", "/book-service")}
-                className="btn-primary w-full sm:w-auto px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md shadow-emerald-500/20"
+                className="btn-primary w-full sm:w-auto px-2.5 sm:px-5 py-2.5 text-xs sm:text-sm font-bold shadow-md shadow-emerald-500/20 text-center justify-center truncate"
                 source="cta"
               >
-                {str("primaryLabel", "Book a Doorstep Repair")}
+                {str("primaryLabel", "Book a Repair")}
               </SiteLink>
               <SiteLink
                 href={str("secondaryHref", "/contact")}
-                className="btn-outline w-full sm:w-auto px-5 py-2.5 text-xs sm:text-sm border-white/20 text-white hover:bg-white/10"
+                className="btn-outline w-full sm:w-auto px-2.5 sm:px-5 py-2.5 text-xs sm:text-sm border-white/20 text-white hover:bg-white/10 text-center justify-center truncate"
                 source="cta"
               >
                 {str("secondaryLabel", "WhatsApp Us")}

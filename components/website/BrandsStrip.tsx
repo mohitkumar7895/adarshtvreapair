@@ -71,7 +71,7 @@ export function BrandsStrip({ heading, items }: { heading?: string; items: strin
 
         <div className="mt-6 sm:mt-8 grid gap-5 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:gap-8">
           {/* Brand Selection Buttons Grid */}
-          <Reveal className="grid grid-cols-2 gap-2.5 sm:gap-3 sm:grid-cols-4">
+          <Reveal className="grid grid-cols-3 gap-1.5 sm:gap-2.5">
             {brands.map((brand, index) => {
               const selected = index === active;
               return (
@@ -80,22 +80,22 @@ export function BrandsStrip({ heading, items }: { heading?: string; items: strin
                   type="button"
                   onClick={() => setActive(index)}
                   aria-pressed={selected}
-                  className={`group relative flex min-h-[70px] sm:min-h-24 flex-col justify-between rounded-xl border p-3 sm:p-4 text-left transition-all duration-200 ${
+                  className={`group relative flex min-h-[56px] sm:min-h-[72px] flex-col justify-between rounded-lg sm:rounded-xl border p-2 sm:p-3 text-left transition-all duration-200 ${
                     selected
-                      ? "border-emerald-500 bg-[#090d16] text-white shadow-lg shadow-emerald-500/20 ring-2 ring-emerald-500/30"
+                      ? "border-emerald-500 bg-[#090d16] text-white shadow-md shadow-emerald-500/20 ring-2 ring-emerald-500/30"
                       : "border-slate-200 bg-slate-50/70 text-slate-800 hover:border-emerald-300 hover:bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${selected ? "text-emerald-400" : "text-slate-400"}`}>
+                    <span className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-wider ${selected ? "text-emerald-400" : "text-slate-400"}`}>
                       Brand
                     </span>
                     <ChevronRight
-                      size={14}
-                      className={`transition-transform duration-200 group-hover:translate-x-1 sm:size-4 ${selected ? "text-emerald-400" : "text-slate-300"}`}
+                      size={12}
+                      className={`transition-transform duration-200 group-hover:translate-x-0.5 sm:size-3.5 ${selected ? "text-emerald-400" : "text-slate-300"}`}
                     />
                   </div>
-                  <span className="font-display text-base font-bold sm:text-lg">
+                  <span className="font-display text-xs sm:text-base font-bold truncate">
                     {brand}
                   </span>
                 </button>

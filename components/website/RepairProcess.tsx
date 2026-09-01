@@ -51,37 +51,38 @@ export function RepairProcess() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((item, index) => {
             const Icon = item.icon;
             return (
               <Reveal key={item.step} delay={index * 80} className="h-full">
-                <div className="group relative flex h-full flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10 sm:p-7">
+                <div className="group relative flex h-full flex-col justify-between rounded-xl sm:rounded-2xl border border-slate-200/90 bg-white p-4 sm:p-6 md:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10">
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="font-display text-3xl font-black text-slate-200 group-hover:text-emerald-500/30 transition">
+                      <span className="font-display text-2xl sm:text-3xl font-black text-slate-200 group-hover:text-emerald-500/30 transition">
                         {item.step}
                       </span>
-                      <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold text-emerald-700">
+                      <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] sm:text-[11px] font-bold text-emerald-700">
                         {item.badge}
                       </span>
                     </div>
 
-                    <div className="mt-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white shadow-md shadow-emerald-500/20 transition-transform duration-300 group-hover:scale-110">
-                      <Icon size={22} />
+                    <div className="mt-3 sm:mt-4 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white shadow-md shadow-emerald-500/20 transition-transform duration-300 group-hover:scale-110">
+                      <Icon size={18} className="sm:hidden" />
+                      <Icon size={22} className="hidden sm:block" />
                     </div>
 
-                    <h3 className="mt-5 font-display text-lg font-bold text-slate-900 transition group-hover:text-emerald-600">
+                    <h3 className="mt-3 sm:mt-5 font-display text-base sm:text-lg font-bold text-slate-900 transition group-hover:text-emerald-600">
                       {item.title}
                     </h3>
 
-                    <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
+                    <p className="mt-1.5 sm:mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className="mt-6 flex items-center gap-1 text-xs font-bold text-emerald-600">
-                    <CheckCircle2 size={14} />
+                  <div className="mt-4 sm:mt-6 flex items-center gap-1 text-xs font-bold text-emerald-600">
+                    <CheckCircle2 size={13} />
                     <span>Guaranteed Quality</span>
                   </div>
                 </div>

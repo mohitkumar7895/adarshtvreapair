@@ -81,13 +81,13 @@ export function StatsSection() {
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-4 gap-1.5 min-[360px]:gap-2 sm:gap-4 lg:gap-6">
           {STATS.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={stat.label}
-                className="group relative flex flex-col items-center rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 sm:p-6 text-center backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:bg-white/[0.06] hover:shadow-lg hover:shadow-emerald-500/10"
+                className="group relative flex flex-col items-center rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 min-[360px]:p-2.5 sm:p-5 lg:p-6 text-center backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:bg-white/[0.06] hover:shadow-lg hover:shadow-emerald-500/10"
                 style={{
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0)" : "translateY(24px)",
@@ -95,26 +95,27 @@ export function StatsSection() {
                 }}
               >
                 {/* Glowing icon badge */}
-                <div className="mb-3 sm:mb-4 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-400 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:text-emerald-300">
-                  <Icon size={18} className="sm:hidden" />
+                <div className="mb-1.5 sm:mb-4 flex h-6 w-6 min-[360px]:h-7 min-[360px]:w-7 sm:h-12 sm:w-12 items-center justify-center rounded-md sm:rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-400 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:text-emerald-300">
+                  <Icon size={12} className="min-[360px]:hidden" />
+                  <Icon size={15} className="hidden min-[360px]:block sm:hidden" />
                   <Icon size={22} className="hidden sm:block" />
                 </div>
 
-                <div className="font-display text-2xl min-[400px]:text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
+                <div className="font-display text-xs min-[360px]:text-sm min-[410px]:text-base sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white whitespace-nowrap">
                   <AnimatedNumber value={stat.value} suffix={stat.suffix} inView={inView} />
                 </div>
 
-                <span className="mt-1.5 text-xs sm:text-sm md:text-base font-semibold tracking-wide text-slate-200">
+                <span className="mt-1 text-[9px] min-[360px]:text-[11px] sm:text-sm md:text-base font-semibold tracking-tight sm:tracking-wide text-slate-200 text-center leading-tight">
                   {stat.label}
                 </span>
 
-                <span className="mt-0.5 text-[11px] sm:text-xs text-slate-400">
+                <span className="mt-0.5 text-[8px] min-[360px]:text-[9px] sm:text-xs text-slate-400 text-center leading-tight">
                   {stat.sublabel}
                 </span>
 
                 {/* Micro accent bar */}
                 <span
-                  className="mt-3 sm:mt-4 h-0.5 w-6 sm:w-8 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500"
+                  className="mt-1.5 sm:mt-4 h-0.5 w-3 min-[360px]:w-5 sm:w-8 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500"
                   style={{
                     transform: inView ? "scaleX(1)" : "scaleX(0)",
                     transition: `transform 0.6s ease ${i * 120 + 300}ms`,

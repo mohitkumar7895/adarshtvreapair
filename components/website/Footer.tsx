@@ -20,32 +20,28 @@ export function Footer({
   const name = settings["business.name"] || "India LED TV Repair Center";
 
   return (
-    <footer className="relative bg-[#070a12] pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-slate-300 lg:pb-0">
+    <footer className="relative bg-[#070a12] pb-[calc(3.8rem+env(safe-area-inset-bottom))] text-slate-300 lg:pb-0">
       {/* Top glowing gradient border line */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-80" />
+      <div className="h-[1.5px] w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-80" />
 
-      <div className="container-wide grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 sm:py-16 lg:grid-cols-4">
+      <div className="container-wide grid grid-cols-2 gap-x-4 gap-y-6 py-6 sm:py-10 sm:gap-8 lg:grid-cols-4">
         {/* Company Info */}
-        <div className="sm:col-span-2 lg:col-span-1">
+        <div className="col-span-2 sm:col-span-2 lg:col-span-1">
           <Logo light name={name} src={settings["business.logo"]} />
-          <p className="mt-4 text-sm leading-6 text-slate-400">
-            Professional doorstep TV repair for LED, LCD, OLED, 4K QLED and Smart TVs. Fast diagnostics, genuine spare parts, and warranty on all services.
+          <p className="mt-2.5 text-xs leading-relaxed text-slate-400 max-w-sm">
+            Doorstep TV repair for LED, LCD, OLED & 4K Smart TVs with genuine parts and warranty across Delhi NCR.
           </p>
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-400">
-            <ShieldCheck size={14} />
-            <span>90-Day Service Warranty</span>
-          </div>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-400">Services & Links</p>
-          <div className="mt-4 grid gap-2.5 text-sm text-slate-400">
+        <div className="col-span-1">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Services & Links</p>
+          <div className="mt-2.5 grid gap-1.5 text-xs sm:text-sm text-slate-400">
             {items.map((item) => (
               <SiteLink
                 key={item.id}
                 href={item.url}
-                className="transition hover:translate-x-1 hover:text-white"
+                className="transition hover:text-white"
                 source="footer"
               >
                 {item.label}
@@ -55,49 +51,35 @@ export function Footer({
         </div>
 
         {/* Operating Hours & Address */}
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-400">Service Hours</p>
-          <div className="mt-4 space-y-3 text-sm text-slate-400">
-            {settings["business.working_hours"] ? (
-              <div className="flex items-start gap-2.5">
-                <Clock size={16} className="mt-0.5 shrink-0 text-emerald-400" />
-                <span>{settings["business.working_hours"]}</span>
-              </div>
-            ) : (
-              <div className="flex items-start gap-2.5">
-                <Clock size={16} className="mt-0.5 shrink-0 text-emerald-400" />
-                <span>Open 7 Days · 8:00 AM - 9:00 PM</span>
-              </div>
-            )}
-            {settings["business.address"] ? (
-              <div className="flex items-start gap-2.5">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-emerald-400" />
-                <span className="leading-relaxed">{settings["business.address"]}</span>
-              </div>
-            ) : (
-              <div className="flex items-start gap-2.5">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-emerald-400" />
-                <span>Doorstep Service across Delhi, Noida, Gurgaon, Ghaziabad & Faridabad</span>
-              </div>
-            )}
+        <div className="col-span-1">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Hours & Location</p>
+          <div className="mt-2.5 space-y-2 text-xs sm:text-sm text-slate-400">
+            <div className="flex items-start gap-1.5">
+              <Clock size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+              <span className="leading-snug">{settings["business.working_hours"] || "8:00 AM - 9:00 PM (7 Days)"}</span>
+            </div>
+            <div className="flex items-start gap-1.5">
+              <MapPin size={14} className="mt-0.5 shrink-0 text-emerald-400" />
+              <span className="leading-snug">{settings["business.address"] || "Delhi, Noida, Gurgaon, Ghaziabad & NCR"}</span>
+            </div>
           </div>
         </div>
 
         {/* Direct Contact Support */}
-        <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-400">Helpdesk & Booking</p>
-          <div className="mt-4 space-y-3 text-sm">
+        <div className="col-span-2 sm:col-span-2 lg:col-span-1">
+          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Helpdesk & Booking</p>
+          <div className="mt-2.5 grid grid-cols-2 lg:grid-cols-1 gap-2 text-xs sm:text-sm">
             {phone ? (
               <a
                 href={phoneHref(phone)}
-                className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-emerald-500/ hover:bg-emerald-500/ hover:text-white"
+                className="group flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 p-2 text-slate-200 transition hover:border-emerald-500/50 hover:bg-white/10 hover:text-white"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white shadow-md shadow-emerald-500/">
-                  <Phone size={16} />
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-emerald-500 text-white shadow-sm">
+                  <Phone size={13} />
                 </span>
                 <div className="min-w-0">
-                  <span className="block text-[11px] font-medium text-slate-400">Call Toll-Free / Helpdesk</span>
-                  <span className="block font-bold tracking-wide text-white">{phone}</span>
+                  <span className="block text-[9px] min-[360px]:text-[10px] text-slate-400 leading-tight">Helpline</span>
+                  <span className="block font-bold text-[11px] min-[360px]:text-xs sm:text-sm text-white truncate">{phone}</span>
                 </div>
               </a>
             ) : null}
@@ -105,14 +87,14 @@ export function Footer({
             {whatsapp ? (
               <a
                 href={whatsappHref(whatsapp, "Hi, I need TV repair assistance.")}
-                className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:text-white"
+                className="group flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 p-2 text-slate-200 transition hover:border-emerald-500/50 hover:bg-white/10 hover:text-white"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white shadow-md shadow-emerald-500/30">
-                  <MessageCircle size={16} />
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-emerald-500 text-white shadow-sm">
+                  <MessageCircle size={13} />
                 </span>
                 <div className="min-w-0">
-                  <span className="block text-[11px] font-medium text-slate-400">Instant WhatsApp Chat</span>
-                  <span className="block font-bold tracking-wide text-emerald-400">Chat with Technician</span>
+                  <span className="block text-[9px] min-[360px]:text-[10px] text-slate-400 leading-tight">WhatsApp Chat</span>
+                  <span className="block font-bold text-[11px] min-[360px]:text-xs sm:text-sm text-emerald-400 truncate">Technician</span>
                 </div>
               </a>
             ) : null}
@@ -120,9 +102,9 @@ export function Footer({
             {settings["business.email"] ? (
               <a
                 href={`mailto:${settings["business.email"]}`}
-                className="flex items-center gap-2 text-xs text-slate-400 transition hover:text-emerald-400"
+                className="col-span-2 lg:col-span-1 flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-400 transition hover:text-emerald-400 pt-0.5"
               >
-                <Mail size={13} className="text-emerald-400" />
+                <Mail size={12} className="text-emerald-400 shrink-0" />
                 <span className="truncate">{settings["business.email"]}</span>
               </a>
             ) : null}
@@ -132,9 +114,9 @@ export function Footer({
 
       {/* Bottom Copyright & Legal Strip */}
       <div className="border-t border-white/10 bg-[#05070e]">
-        <div className="container-wide flex flex-col gap-3 py-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div className="container-wide flex flex-col gap-2 py-3 text-[11px] sm:text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <p>{settings["footer.copyright"] || `© ${new Date().getFullYear()} ${name}. All rights reserved.`}</p>
-          <div className="flex flex-wrap gap-x-5 gap-y-2">
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
             {legal.map((item) => (
               <Link key={item.id} href={item.url} className="transition hover:text-emerald-400">
                 {item.label}

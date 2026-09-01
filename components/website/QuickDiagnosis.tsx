@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AlertCircle, CheckCircle2, Clock, Phone, Sparkles, Tv, Wrench, Zap } from "lucide-react";
+import { AlertCircle, CheckCircle2, Clock, MessageCircle, Phone, Sparkles, Tv, Wrench, Zap } from "lucide-react";
 import { Reveal } from "@/components/website/Reveal";
 import { phoneHref, whatsappHref } from "@/lib/utils/cn";
 import { useUiStore } from "@/store/ui";
@@ -210,23 +210,23 @@ export function QuickDiagnosis({ phone = "9990113545" }: { phone?: string }) {
                 </div>
               </div>
 
-              <div className="pt-3 sm:pt-4 flex flex-col gap-2.5 sm:flex-row">
+              <div className="pt-3 sm:pt-4 grid grid-cols-2 gap-2 sm:flex sm:gap-2.5">
                 <button
                   type="button"
                   onClick={() => openBooking(`diagnosis:${current.id}`)}
-                  className="btn-primary flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-xs sm:text-sm font-bold shadow-lg shadow-emerald-500/25"
+                  className="btn-primary flex-1 flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl py-2.5 sm:py-3 text-xs sm:text-sm font-bold shadow-lg shadow-emerald-500/25"
                 >
-                  <Zap size={16} />
-                  Book Fix for This Issue
+                  <Zap size={15} />
+                  <span className="truncate">Book Fix</span>
                 </button>
                 <a
                   href={whatsappHref(`91${phone}`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500 hover:text-white"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500 hover:text-white"
                 >
-                  <Phone size={14} />
-                  WhatsApp
+                  <MessageCircle size={14} />
+                  <span className="truncate">WhatsApp</span>
                 </a>
               </div>
             </div>

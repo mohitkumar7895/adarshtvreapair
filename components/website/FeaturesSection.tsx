@@ -86,7 +86,7 @@ export function FeaturesSection({
         </div>
 
         {/* Feature Cards Bento Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 sm:mt-14">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:mt-14">
           {displayItems.map((item, i) => {
             const Icon = ICONS[i % ICONS.length];
             const n = String(i + 1).padStart(2, "0");
@@ -94,13 +94,13 @@ export function FeaturesSection({
             return (
               <article
                 key={item.title}
-                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-500/ hover:shadow-xl hover:shadow-emerald-500/ ${
+                className={`group relative flex flex-col overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200/80 bg-white p-4 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 ${
                   inView ? "feature-in" : "feature-wait"
                 }`}
                 style={{ animationDelay: `${150 + i * 100}ms` }}
               >
                 {photo ? (
-                  <div className="relative mb-5 aspect-16/10 overflow-hidden rounded-xl bg-slate-900">
+                  <div className="relative mb-3 sm:mb-5 aspect-16/10 overflow-hidden rounded-lg sm:rounded-xl bg-slate-900">
                     <CmsImage
                       src={photo}
                       alt={item.title}
@@ -112,18 +112,19 @@ export function FeaturesSection({
                 ) : null}
 
                 <div className="flex items-center justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/ transition-transform duration-300 group-hover:scale-110">
-                    <Icon size={20} />
+                  <span className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/25 transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={18} className="sm:hidden" />
+                    <Icon size={20} className="hidden sm:block" />
                   </span>
                   <span className="font-mono text-xs font-bold text-slate-400">
                     {n}
                   </span>
                 </div>
 
-                <h3 className="mt-5 font-display text-lg font-bold text-slate-900 transition group-hover:text-emerald-600">
+                <h3 className="mt-3 sm:mt-5 font-display text-base sm:text-lg font-bold text-slate-900 transition group-hover:text-emerald-600">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
                   {item.body}
                 </p>
 

@@ -97,22 +97,22 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="mt-6 sm:mt-8 flex flex-col gap-3 min-[440px]:flex-row min-[440px]:items-center">
+            <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-2 min-[440px]:flex min-[440px]:items-center min-[440px]:gap-3">
               <button
                 type="button"
                 onClick={() => openBooking("hero-book-btn")}
-                className="btn-primary w-full min-[440px]:w-auto flex items-center justify-center gap-2 rounded-xl px-6 py-3 sm:py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="btn-primary w-full min-[440px]:w-auto flex items-center justify-center gap-1.5 min-[380px]:gap-2 rounded-xl px-2.5 min-[380px]:px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs min-[380px]:text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
-                <Zap size={17} className="text-emerald-200" />
-                <span>Book Doorstep Visit</span>
+                <Zap size={15} className="text-emerald-200 shrink-0" />
+                <span className="truncate">Book Visit</span>
               </button>
 
               <a
                 href={phoneHref(phone)}
-                className="w-full min-[440px]:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-white transition hover:bg-white/10 hover:border-emerald-400/60"
+                className="w-full min-[440px]:w-auto inline-flex items-center justify-center gap-1.5 min-[380px]:gap-2 rounded-xl border border-white/20 bg-white/5 px-2.5 min-[380px]:px-4 sm:px-5 py-2.5 sm:py-3.5 text-xs min-[380px]:text-sm sm:text-base font-bold text-white transition hover:bg-white/10 hover:border-emerald-400/60"
               >
-                <Phone size={17} className="text-emerald-400" />
-                <span>Call {phone}</span>
+                <Phone size={15} className="text-emerald-400 shrink-0" />
+                <span className="truncate">Call Now</span>
               </a>
             </div>
 
