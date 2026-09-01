@@ -44,8 +44,8 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#06140e] text-white py-10 sm:py-14 lg:py-18">
-      {/* Lightweight GPU-friendly ambient glows (No heavy 130px blur lag) */}
+    <section className="relative overflow-hidden bg-[#06140e] text-white py-8 sm:py-12 lg:py-16">
+      {/* Lightweight GPU-friendly ambient glows */}
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
@@ -54,21 +54,21 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
       />
 
       <div className="container-wide relative z-10">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12 xl:gap-14 items-center">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 xl:gap-14 items-center">
           {/* ───────────────────────────────────────────────────────────── */}
           {/*  LEFT COLUMN: Clean, Uncluttered, High-Impact Content          */}
           {/* ───────────────────────────────────────────────────────────── */}
           <div className="min-w-0">
             {/* Live Availability Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/70 px-3.5 py-1.5 shadow-md">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-300">
+            <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/70 px-3 py-1.5 shadow-md">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-300 leading-snug">
                 Doorstep TV Repair in Noida · Arriving in 60-90 Mins
               </span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.14]">
+            <h1 className="mt-3.5 sm:mt-4 font-display text-2xl min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-[3.1rem] font-extrabold tracking-tight leading-[1.15] text-white">
               Expert LED TV Repair at Your Doorstep in{" "}
               <span className="text-emerald-400">
                 Noida & NCR
@@ -76,32 +76,32 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
             </h1>
 
             {/* Concise Clean Subtext */}
-            <p className="mt-4 max-w-lg text-sm sm:text-base leading-relaxed text-slate-300">
+            <p className="mt-3.5 max-w-lg text-sm sm:text-base leading-relaxed text-slate-300">
               Certified doorstep repair for <strong className="text-white font-semibold">Samsung, Sony, LG, Mi, OnePlus, TCL</strong> and all Smart TVs. Genuine parts with up to <strong className="text-emerald-300 font-semibold">90 days written warranty</strong>.
             </p>
 
             {/* 3 Simple Value Pillars */}
-            <div className="mt-6 flex flex-wrap gap-4 text-xs sm:text-sm text-slate-200">
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm text-slate-200">
               <span className="inline-flex items-center gap-1.5 font-medium">
-                <Clock size={16} className="text-emerald-400" />
+                <Clock size={15} className="text-emerald-400 shrink-0" />
                 60-90 Mins Doorstep
               </span>
               <span className="inline-flex items-center gap-1.5 font-medium">
-                <ShieldCheck size={16} className="text-emerald-400" />
+                <ShieldCheck size={15} className="text-emerald-400 shrink-0" />
                 90-Day Warranty
               </span>
               <span className="inline-flex items-center gap-1.5 font-medium">
-                <CheckCircle2 size={16} className="text-emerald-400" />
+                <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
                 Transparent Pricing
               </span>
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-3 min-[440px]:flex-row min-[440px]:items-center">
               <button
                 type="button"
                 onClick={() => openBooking("hero-book-btn")}
-                className="btn-primary flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="btn-primary w-full min-[440px]:w-auto flex items-center justify-center gap-2 rounded-xl px-6 py-3 sm:py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Zap size={17} className="text-emerald-200" />
                 <span>Book Doorstep Visit</span>
@@ -109,7 +109,7 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
 
               <a
                 href={phoneHref(phone)}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm sm:text-base font-bold text-white transition hover:bg-white/10 hover:border-emerald-400/60"
+                className="w-full min-[440px]:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 sm:py-3.5 text-sm sm:text-base font-bold text-white transition hover:bg-white/10 hover:border-emerald-400/60"
               >
                 <Phone size={17} className="text-emerald-400" />
                 <span>Call {phone}</span>
@@ -117,13 +117,13 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
             </div>
 
             {/* Trust Rating Strip */}
-            <div className="mt-6 flex items-center gap-3 pt-4 border-t border-white/10 text-xs text-slate-400">
-              <div className="flex items-center gap-1 text-amber-400">
+            <div className="mt-6 flex flex-wrap items-center gap-2.5 pt-4 border-t border-white/10 text-xs text-slate-400">
+              <div className="flex items-center gap-0.5 text-amber-400">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={14} fill="currentColor" />
                 ))}
               </div>
-              <span>
+              <span className="leading-snug">
                 <strong className="text-white font-bold">4.9 / 5.0</strong> · Trusted by 15,000+ happy customers in Noida & NCR
               </span>
             </div>
@@ -132,15 +132,15 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
           {/* ───────────────────────────────────────────────────────────── */}
           {/*  RIGHT COLUMN: Clean, Lightweight Instant Callback Card        */}
           {/* ───────────────────────────────────────────────────────────── */}
-          <div className="relative">
-            <div className="rounded-2xl border border-emerald-500/30 bg-[#092017] p-6 sm:p-7 shadow-xl">
-              <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
+          <div className="relative w-full">
+            <div className="rounded-2xl border border-emerald-500/30 bg-[#092017] p-4.5 sm:p-6 md:p-7 shadow-xl">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
                     <Wrench size={16} />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white">Instant Callback</h3>
+                    <h3 className="text-sm sm:text-base font-bold text-white">Instant Callback</h3>
                     <p className="text-[11px] text-emerald-400">Technician responds in &lt; 10 mins</p>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
               </div>
 
               {submitted ? (
-                <div className="py-8 text-center space-y-2">
+                <div className="py-6 sm:py-8 text-center space-y-2">
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
                     <CheckCircle2 size={28} />
                   </div>
@@ -167,7 +167,7 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
                   </a>
                 </div>
               ) : (
-                <form onSubmit={handleQuickBook} className="mt-4 space-y-3.5">
+                <form onSubmit={handleQuickBook} className="mt-4 space-y-3">
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 mb-1">
                       TV Brand:
@@ -175,7 +175,7 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
                     <select
                       value={brand}
                       onChange={(e) => setBrand(e.target.value)}
-                      className="w-full rounded-xl border border-white/15 bg-black/40 px-3.5 py-2.5 text-xs sm:text-sm text-white focus:border-emerald-400 focus:outline-none"
+                      className="w-full rounded-xl border border-white/15 bg-black/40 px-3.5 py-2.5 text-base sm:text-sm text-white focus:border-emerald-400 focus:outline-none"
                     >
                       <option value="Samsung" className="bg-slate-900">Samsung</option>
                       <option value="Sony Bravia" className="bg-slate-900">Sony Bravia</option>
@@ -200,7 +200,7 @@ export function HomeHero({ settings }: { settings: SettingsMap }) {
                       value={userPhone}
                       onChange={(e) => setUserPhone(e.target.value)}
                       placeholder="e.g. 9990113545"
-                      className="w-full rounded-xl border border-white/15 bg-black/40 px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:border-emerald-400 focus:outline-none"
+                      className="w-full rounded-xl border border-white/15 bg-black/40 px-3.5 py-2.5 text-base sm:text-sm text-white placeholder-slate-500 focus:border-emerald-400 focus:outline-none"
                     />
                   </div>
 

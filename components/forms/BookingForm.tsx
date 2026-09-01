@@ -61,7 +61,7 @@ export function BookingForm({
 
   return (
     <form onSubmit={onSubmit} className="space-y-3.5 sm:space-y-4">
-      <div className={`grid gap-3 sm:gap-4 ${mode === "panel" ? "grid-cols-2" : "sm:grid-cols-2"}`}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {fields.map(([name, label, type, placeholder]) => (
           <label key={name} className="block min-w-0">
             <span className="mb-1 block text-xs font-semibold tracking-wide text-slate-700">
@@ -79,7 +79,7 @@ export function BookingForm({
         ))}
       </div>
 
-      <label className={mode === "panel" ? "col-span-2 block" : "block"}>
+      <label className="block">
         <span className="mb-1 block text-xs font-semibold tracking-wide text-slate-700">
           What is the problem with your TV?
         </span>

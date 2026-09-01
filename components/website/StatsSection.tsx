@@ -71,7 +71,7 @@ export function StatsSection() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden bg-gradient-to-b from-[#090d16] via-[#0c1527] to-[#090d16] py-16 sm:py-24"
+      className="relative overflow-hidden bg-gradient-to-b from-[#090d16] via-[#0c1527] to-[#090d16] py-10 sm:py-16 lg:py-20"
     >
       {/* High-tech radial background glows */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -81,13 +81,13 @@ export function StatsSection() {
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
           {STATS.map((stat, i) => {
             const Icon = stat.icon;
             return (
               <div
                 key={stat.label}
-                className="group relative flex flex-col items-center rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:bg-white/[0.06] hover:shadow-lg hover:shadow-emerald-500/10"
+                className="group relative flex flex-col items-center rounded-2xl border border-white/10 bg-white/[0.03] p-3.5 sm:p-6 text-center backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:bg-white/[0.06] hover:shadow-lg hover:shadow-emerald-500/10"
                 style={{
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0)" : "translateY(24px)",
@@ -95,25 +95,26 @@ export function StatsSection() {
                 }}
               >
                 {/* Glowing icon badge */}
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-400 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:text-emerald-300">
-                  <Icon size={22} />
+                <div className="mb-3 sm:mb-4 flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 text-emerald-400 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:text-emerald-300">
+                  <Icon size={18} className="sm:hidden" />
+                  <Icon size={22} className="hidden sm:block" />
                 </div>
 
-                <div className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-5xl">
+                <div className="font-display text-2xl min-[400px]:text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
                   <AnimatedNumber value={stat.value} suffix={stat.suffix} inView={inView} />
                 </div>
 
-                <span className="mt-2 text-sm font-semibold tracking-wide text-slate-200 sm:text-base">
+                <span className="mt-1.5 text-xs sm:text-sm md:text-base font-semibold tracking-wide text-slate-200">
                   {stat.label}
                 </span>
 
-                <span className="mt-0.5 text-xs text-slate-400">
+                <span className="mt-0.5 text-[11px] sm:text-xs text-slate-400">
                   {stat.sublabel}
                 </span>
 
                 {/* Micro accent bar */}
                 <span
-                  className="mt-4 h-0.5 w-8 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500"
+                  className="mt-3 sm:mt-4 h-0.5 w-6 sm:w-8 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500"
                   style={{
                     transform: inView ? "scaleX(1)" : "scaleX(0)",
                     transition: `transform 0.6s ease ${i * 120 + 300}ms`,

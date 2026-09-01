@@ -28,24 +28,25 @@ export function Header({
   return (
     <header className="sticky top-0 z-50 transition-all">
       {/* Top utility bar */}
-      <div className="border-b border-white/10 bg-[#060911] text-xs text-slate-400">
-        <div className="container-wide flex h-9 items-center justify-between gap-4">
-          <div className="flex items-center gap-2 overflow-hidden truncate">
-            <span className="relative flex h-2 w-2">
+      <div className="border-b border-white/10 bg-[#060911] text-[11px] sm:text-xs text-slate-400">
+        <div className="container-wide flex h-8 sm:h-9 items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-hidden truncate">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
             <span className="min-w-0 truncate font-medium text-slate-300">
-              {hours ? `Express Doorstep Repair · ${hours}` : "Fast Doorstep TV Repair in 60-90 mins"}
+              {hours ? `Express Doorstep Repair · ${hours}` : "Doorstep TV Repair in 60-90 mins"}
             </span>
           </div>
           {phone ? (
             <a
               href={phoneHref(phone)}
-              className="group inline-flex shrink-0 items-center gap-1.5 font-semibold text-slate-200 transition hover:text-emerald-400"
+              className="group inline-flex shrink-0 items-center gap-1 font-semibold text-slate-200 transition hover:text-emerald-400 text-[11px] sm:text-xs"
             >
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 transition group-hover:bg-emerald-500 group-hover:text-white">
-                <Phone size={10} />
+              <span className="flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 transition group-hover:bg-emerald-500 group-hover:text-white">
+                <Phone size={9} className="sm:hidden" />
+                <Phone size={10} className="hidden sm:block" />
               </span>
               <span className="tracking-wide">{phone}</span>
             </a>
@@ -55,8 +56,8 @@ export function Header({
 
       {/* Main Solid Glass Header */}
       <div className="border-b border-white/10 bg-[#06120d] transition-colors">
-        <div className="container-wide flex h-16 min-w-0 items-center justify-between gap-4 sm:h-20 lg:gap-8">
-          <div className="shrink-0 flex items-center py-1">
+        <div className="container-wide flex h-14 min-w-0 items-center justify-between gap-2 sm:h-18 md:h-20 lg:gap-8">
+          <div className="shrink-0 flex items-center py-0.5">
             <Logo light name={name} src={settings["business.logo"]} />
           </div>
 

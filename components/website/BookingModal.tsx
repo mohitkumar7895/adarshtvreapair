@@ -40,18 +40,18 @@ export function BookingModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booking-modal-title"
-        className="relative z-10 max-h-[min(94dvh,calc(100dvh-1rem))] w-full max-w-lg overflow-y-auto rounded-t-3xl border border-slate-200/80 bg-white p-6 shadow-2xl sm:rounded-3xl sm:p-8"
+        className="relative z-10 max-h-[min(94dvh,calc(100dvh-1rem))] w-full max-w-lg overflow-y-auto rounded-t-3xl border border-slate-200/80 bg-white p-5 shadow-2xl sm:rounded-3xl sm:p-7 md:p-8"
       >
-        <div className="mb-6 flex items-start justify-between gap-4">
+        <div className="mb-4 sm:mb-6 flex items-start justify-between gap-3 sm:gap-4">
           <div>
             <div className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-emerald-600">
               <Sparkles size={11} className="text-emerald-500" />
               <span>Same-Day Booking</span>
             </div>
-            <h2 id="booking-modal-title" className="mt-1.5 font-display text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+            <h2 id="booking-modal-title" className="mt-1 font-display text-lg sm:text-2xl font-bold tracking-tight text-slate-900">
               Book a Doorstep Repair
             </h2>
-            <p className="mt-1 text-xs leading-relaxed text-slate-500 sm:text-sm">
+            <p className="mt-0.5 text-xs leading-relaxed text-slate-500 sm:text-sm">
               Our engineer will confirm the visit window before departure.
             </p>
           </div>

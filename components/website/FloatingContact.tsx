@@ -11,7 +11,7 @@ export function FloatingContact({
   whatsapp?: string;
 }) {
   return (
-    <aside aria-label="Quick Actions" className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 flex flex-col items-end gap-2 sm:gap-2.5">
+    <aside aria-label="Quick Actions" className="fixed bottom-[4.8rem] md:bottom-6 right-3 sm:right-5 z-40 flex flex-col items-end gap-2 sm:gap-2.5">
       {/* WhatsApp Button */}
       <a
         href={whatsappHref(whatsapp)}

@@ -113,7 +113,7 @@ export function QuickDiagnosis({ phone = "9990113545" }: { phone?: string }) {
         </Reveal>
 
         {/* Interactive Grid */}
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 items-start">
+        <div className="mt-8 sm:mt-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 items-start">
           {/* Issue Selector Chips */}
           <div className="space-y-3">
             <p className="text-xs font-bold uppercase tracking-wider text-emerald-400">
@@ -127,27 +127,27 @@ export function QuickDiagnosis({ phone = "9990113545" }: { phone?: string }) {
                     key={issue.id}
                     type="button"
                     onClick={() => setSelectedId(issue.id)}
-                    className={`group flex items-center justify-between rounded-xl border p-3.5 text-left transition-all duration-300 ${
+                    className={`group flex items-center justify-between rounded-xl border p-3 sm:p-3.5 text-left transition-all duration-300 ${
                       active
                         ? "border-emerald-500 bg-emerald-500/15 shadow-lg shadow-emerald-500/20 text-white"
                         : "border-white/10 bg-white/[0.03] text-slate-300 hover:border-emerald-500/40 hover:bg-white/[0.06]"
                     }`}
                   >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-xl backdrop-blur-sm group-hover:scale-105 transition">
+                    <div className="flex items-center gap-2.5 sm:gap-3 min-w-0 pr-2">
+                      <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 text-lg sm:text-xl backdrop-blur-sm group-hover:scale-105 transition">
                         {issue.icon}
                       </span>
                       <div className="min-w-0">
-                        <span className="block truncate text-sm font-semibold sm:text-[0.93rem]">
+                        <span className="block text-xs sm:text-sm font-semibold line-clamp-2 leading-snug">
                           {issue.title}
                         </span>
-                        <span className="text-[11px] font-medium text-emerald-400">
+                        <span className="text-[10px] sm:text-[11px] font-medium text-emerald-400 mt-0.5 block">
                           {issue.tag}
                         </span>
                       </div>
                     </div>
                     <span
-                      className={`ml-2 h-2.5 w-2.5 shrink-0 rounded-full transition-all ${
+                      className={`h-2.5 w-2.5 shrink-0 rounded-full transition-all ${
                         active ? "bg-emerald-400 shadow-[0_0_8px_#34d399]" : "bg-white/20"
                       }`}
                     />
@@ -158,63 +158,63 @@ export function QuickDiagnosis({ phone = "9990113545" }: { phone?: string }) {
           </div>
 
           {/* Diagnostic Result Card */}
-          <div className="relative overflow-hidden rounded-2xl border border-emerald-500/40 bg-gradient-to-br from-[#09221a] via-[#05140f] to-[#09221a] p-6 shadow-2xl backdrop-blur-xl sm:p-8">
-            <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-4">
+          <div className="relative overflow-hidden rounded-2xl border border-emerald-500/40 bg-gradient-to-br from-[#09221a] via-[#05140f] to-[#09221a] p-4.5 sm:p-6 md:p-8 shadow-2xl backdrop-blur-xl">
+            <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-3 sm:pb-4">
               <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
-                  <Wrench size={16} />
+                <span className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
+                  <Wrench size={15} />
                 </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-300">
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-300">
                   Doorstep Diagnosis
                 </span>
               </div>
-              <span className="rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs font-semibold text-emerald-300">
+              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">
                 90-Day Warranty
               </span>
             </div>
 
-            <div className="mt-5 space-y-4">
+            <div className="mt-4 sm:mt-5 space-y-3.5 sm:space-y-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400">
                   Fault Cause
                 </p>
-                <p className="mt-1 text-sm font-medium leading-relaxed text-slate-200">
+                <p className="mt-1 text-xs sm:text-sm font-medium leading-relaxed text-slate-200">
                   {current.cause}
                 </p>
               </div>
 
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400">
                   How We Repair It
                 </p>
-                <p className="mt-1 text-sm font-medium leading-relaxed text-emerald-200">
+                <p className="mt-1 text-xs sm:text-sm font-medium leading-relaxed text-emerald-200">
                   {current.solution}
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <span className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <Clock size={13} className="text-emerald-400" />
+              <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-2.5 sm:gap-3 pt-1">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-2.5 sm:p-3">
+                  <span className="flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-400">
+                    <Clock size={13} className="text-emerald-400 shrink-0" />
                     Est. Duration
                   </span>
-                  <p className="mt-1 text-sm font-bold text-white">{current.time}</p>
+                  <p className="mt-1 text-xs sm:text-sm font-bold text-white">{current.time}</p>
                 </div>
 
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-                  <span className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <CheckCircle2 size={13} className="text-emerald-400" />
+                <div className="rounded-xl border border-white/10 bg-white/5 p-2.5 sm:p-3">
+                  <span className="flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-400">
+                    <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
                     Parts Grade
                   </span>
-                  <p className="mt-1 text-sm font-bold text-white">{current.parts}</p>
+                  <p className="mt-1 text-xs sm:text-sm font-bold text-white">{current.parts}</p>
                 </div>
               </div>
 
-              <div className="pt-4 flex flex-col gap-3 sm:flex-row">
+              <div className="pt-3 sm:pt-4 flex flex-col gap-2.5 sm:flex-row">
                 <button
                   type="button"
                   onClick={() => openBooking(`diagnosis:${current.id}`)}
-                  className="btn-primary flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold shadow-lg shadow-emerald-500/25"
+                  className="btn-primary flex-1 flex items-center justify-center gap-2 rounded-xl py-3 text-xs sm:text-sm font-bold shadow-lg shadow-emerald-500/25"
                 >
                   <Zap size={16} />
                   Book Fix for This Issue
@@ -223,9 +223,9 @@ export function QuickDiagnosis({ phone = "9990113545" }: { phone?: string }) {
                   href={whatsappHref(`91${phone}`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500 hover:text-white"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-emerald-300 transition hover:bg-emerald-500 hover:text-white"
                 >
-                  <Phone size={15} />
+                  <Phone size={14} />
                   WhatsApp
                 </a>
               </div>

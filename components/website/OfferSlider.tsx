@@ -50,15 +50,15 @@ export function OfferSlider({ images }: { images: string[] }) {
           {images.length > 1 && (
             <>
               {/* Indicator Dots */}
-              <div className="absolute bottom-3 left-0 right-0 z-20 flex justify-center gap-2">
+              <div className="absolute bottom-2.5 sm:bottom-3 left-0 right-0 z-20 flex justify-center gap-1.5 sm:gap-2">
                 {images.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                       i === active
-                        ? "w-8 bg-emerald-400 shadow-md shadow-emerald-400/50"
-                        : "w-2 bg-white/30 hover:bg-white/70"
+                        ? "w-6 sm:w-8 bg-emerald-400 shadow-md shadow-emerald-400/50"
+                        : "w-1.5 sm:w-2 bg-white/30 hover:bg-white/70"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />
@@ -68,19 +68,21 @@ export function OfferSlider({ images }: { images: string[] }) {
               {/* Navigation Arrows */}
               <button
                 type="button"
-                className="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md transition hover:scale-110 hover:bg-emerald-600 sm:left-5 sm:h-11 sm:w-11"
+                className="absolute left-2 sm:left-4 top-1/2 z-20 flex h-7 w-7 sm:h-10 sm:w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-md transition hover:scale-110 hover:bg-emerald-600"
                 onClick={() => setActive((i) => (i - 1 + images.length) % images.length)}
                 aria-label="Previous slide"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={16} className="sm:hidden" />
+                <ChevronLeft size={20} className="hidden sm:block" />
               </button>
               <button
                 type="button"
-                className="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white backdrop-blur-md transition hover:scale-110 hover:bg-emerald-600 sm:right-5 sm:h-11 sm:w-11"
+                className="absolute right-2 sm:right-4 top-1/2 z-20 flex h-7 w-7 sm:h-10 sm:w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-md transition hover:scale-110 hover:bg-emerald-600"
                 onClick={() => setActive((i) => (i + 1) % images.length)}
                 aria-label="Next slide"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={16} className="sm:hidden" />
+                <ChevronRight size={20} className="hidden sm:block" />
               </button>
             </>
           )}

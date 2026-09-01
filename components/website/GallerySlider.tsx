@@ -34,12 +34,12 @@ export function GallerySlider({ images }: { images: GalleryImage[] }) {
         </div>
 
         {/* Continuous Horizontal Marquee */}
-        <div className="overflow-hidden w-full -mx-4 sm:-mx-6 md:mx-0 px-4 sm:px-6 md:px-0">
-          <div className="flex gap-5 w-max animate-marquee hover:[animation-play-state:paused] will-change-transform">
+        <div className="overflow-hidden w-full -mx-3.5 sm:-mx-6 md:mx-0 px-3.5 sm:px-6 md:px-0">
+          <div className="flex gap-3 sm:gap-5 w-max animate-marquee hover:[animation-play-state:paused] will-change-transform">
             {slides.map((slide, i) => (
               <div
                 key={`${slide.id}-${i}`}
-                className="group relative flex aspect-[16/11] w-[300px] shrink-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-[#070d17] p-2 shadow-xl transition-all duration-300 hover:border-emerald-500/50 hover:shadow-emerald-500/20 sm:w-[360px] md:w-[400px]"
+                className="group relative flex aspect-[16/11] w-[250px] min-[380px]:w-[290px] sm:w-[360px] md:w-[400px] shrink-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-[#070d17] p-2 shadow-xl transition-all duration-300 hover:border-emerald-500/50 hover:shadow-emerald-500/20"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -50,8 +50,8 @@ export function GallerySlider({ images }: { images: GalleryImage[] }) {
                   decoding="async"
                 />
                 {slide.caption ? (
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <span className="inline-block truncate max-w-full rounded-lg bg-black/75 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-md border border-white/10">
+                  <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
+                    <span className="inline-block truncate max-w-full rounded-lg bg-black/80 px-2.5 py-0.5 text-[11px] sm:text-xs font-medium text-slate-200 backdrop-blur-md border border-white/10">
                       {slide.caption}
                     </span>
                   </div>

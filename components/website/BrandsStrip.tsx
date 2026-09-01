@@ -69,9 +69,9 @@ export function BrandsStrip({ heading, items }: { heading?: string; items: strin
           </div>
         </Reveal>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:gap-8">
+        <div className="mt-6 sm:mt-8 grid gap-5 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:gap-8">
           {/* Brand Selection Buttons Grid */}
-          <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <Reveal className="grid grid-cols-2 gap-2.5 sm:gap-3 sm:grid-cols-4">
             {brands.map((brand, index) => {
               const selected = index === active;
               return (
@@ -80,22 +80,22 @@ export function BrandsStrip({ heading, items }: { heading?: string; items: strin
                   type="button"
                   onClick={() => setActive(index)}
                   aria-pressed={selected}
-                  className={`group relative flex min-h-24 flex-col justify-between rounded-xl border p-4 text-left transition-all duration-200 sm:min-h-28 sm:p-5 ${
+                  className={`group relative flex min-h-[70px] sm:min-h-24 flex-col justify-between rounded-xl border p-3 sm:p-4 text-left transition-all duration-200 ${
                     selected
                       ? "border-emerald-500 bg-[#090d16] text-white shadow-lg shadow-emerald-500/20 ring-2 ring-emerald-500/30"
                       : "border-slate-200 bg-slate-50/70 text-slate-800 hover:border-emerald-300 hover:bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`text-[11px] font-bold uppercase tracking-wider ${selected ? "text-emerald-400" : "text-slate-400"}`}>
+                    <span className={`text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${selected ? "text-emerald-400" : "text-slate-400"}`}>
                       Brand
                     </span>
                     <ChevronRight
-                      size={16}
-                      className={`transition-transform duration-200 group-hover:translate-x-1 ${selected ? "text-emerald-400" : "text-slate-300"}`}
+                      size={14}
+                      className={`transition-transform duration-200 group-hover:translate-x-1 sm:size-4 ${selected ? "text-emerald-400" : "text-slate-300"}`}
                     />
                   </div>
-                  <span className="font-display text-lg font-bold sm:text-xl">
+                  <span className="font-display text-base font-bold sm:text-lg">
                     {brand}
                   </span>
                 </button>
@@ -105,39 +105,39 @@ export function BrandsStrip({ heading, items }: { heading?: string; items: strin
 
           {/* Active Brand Diagnostic Overview */}
           <Reveal delay={80} className="h-full">
-            <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-[#0c1322] via-[#0f172a] to-[#090d16] p-6 text-white shadow-xl sm:p-8">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-gradient-to-br from-[#0c1322] via-[#0f172a] to-[#090d16] p-4.5 sm:p-6 md:p-8 text-white shadow-xl">
               <div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Diagnosis Specs</span>
-                    <h3 className="mt-1 font-display text-2xl font-extrabold sm:text-3xl">{current} Television</h3>
+                    <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">Diagnosis Specs</span>
+                    <h3 className="mt-0.5 sm:mt-1 font-display text-xl font-extrabold sm:text-2xl md:text-3xl">{current} Television</h3>
                   </div>
-                  <span className="rounded-lg bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-300">
+                  <span className="rounded-lg bg-emerald-500/20 px-2.5 py-1 text-[11px] sm:text-xs font-semibold text-emerald-300">
                     OEM Parts
                   </span>
                 </div>
 
-                <p className="mt-4 text-sm leading-relaxed text-slate-300">
+                <p className="mt-3 sm:mt-4 text-xs sm:text-sm leading-relaxed text-slate-300">
                   {brandInfo.desc}
                 </p>
 
-                <div className="mt-5 space-y-2">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">Frequently Solved Faults:</p>
+                <div className="mt-4 sm:mt-5 space-y-2">
+                  <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400">Frequently Solved Faults:</p>
                   {brandInfo.commonIssues.map((issue, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 size={15} className="shrink-0 text-emerald-400" />
+                      <CheckCircle2 size={14} className="shrink-0 text-emerald-400" />
                       <span>{issue}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5 backdrop-blur-sm">
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400">
-                  <ShieldCheck size={18} />
+              <div className="mt-5 sm:mt-6 flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3 sm:p-3.5 backdrop-blur-sm">
+                <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-emerald-400">
+                  <ShieldCheck size={16} />
                   <span>Doorstep Visit in 60-90 Mins</span>
                 </div>
-                <span className="text-xs text-slate-400">Genuine Spares</span>
+                <span className="text-[11px] sm:text-xs text-slate-400">Genuine Spares</span>
               </div>
             </div>
           </Reveal>
