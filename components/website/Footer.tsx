@@ -31,7 +31,7 @@ export function Footer({
           <p className="mt-4 text-sm leading-6 text-slate-400">
             Professional doorstep TV repair for LED, LCD, OLED, 4K QLED and Smart TVs. Fast diagnostics, genuine spare parts, and warranty on all services.
           </p>
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/ bg-emerald-500/ px-3.5 py-1.5 text-xs font-semibold text-emerald-400">
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-400">
             <ShieldCheck size={14} />
             <span>90-Day Service Warranty</span>
           </div>

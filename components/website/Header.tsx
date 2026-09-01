@@ -132,7 +132,7 @@ export function Header({
 
         {/* Mobile Navigation Drawer */}
         {open ? (
-          <div className="max-h-[min(75vh,calc(100dvh-5rem))] overflow-y-auto border-t border-white/10 bg-[#0a0f1d] px-5 py-4 lg:hidden">
+          <div className="max-h-[min(75vh,calc(100dvh-5rem))] overflow-y-auto border-t border-white/10 bg-[#06140e] px-5 py-4 lg:hidden">
             <div className="space-y-1">
               {navItems.map((item) => (
                 <div key={item.id}>

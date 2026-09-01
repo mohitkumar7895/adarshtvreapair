@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["mysql2"],
   compress: true,
   poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: ["lucide-react", "clsx", "tailwind-merge", "zustand"],
+  },
   images: {
     unoptimized: true,
     remotePatterns: [
