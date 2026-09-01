@@ -13,14 +13,18 @@ export function Logo({
   const photo = src?.replace(/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?/i, "") || "/images/logo.png";
 
   return (
-    <Link href="/" className="group flex min-w-0 items-center gap-3 transition" aria-label={name || "Home"}>
+    <Link
+      href="/"
+      className="group flex shrink-0 items-center gap-2.5 transition duration-200"
+      aria-label={name || "Home"}
+    >
       {photo ? (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={photo}
             alt={name || "Adarsh LED TV Repair"}
-            className="h-10 w-auto max-h-12 max-w-[200px] object-contain object-left rounded-md sm:h-12 sm:max-w-[240px]"
+            className="h-10 sm:h-12 w-auto max-w-[210px] sm:max-w-[260px] object-contain object-left drop-shadow-sm transition-transform duration-300 group-hover:scale-[1.02]"
           />
         </div>
       ) : (

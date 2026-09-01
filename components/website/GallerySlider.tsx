@@ -39,20 +39,19 @@ export function GallerySlider({ images }: { images: GalleryImage[] }) {
             {slides.map((slide, i) => (
               <div
                 key={`${slide.id}-${i}`}
-                className="group relative aspect-4/3 w-[280px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-slate-950 shadow-xl transition-all duration-300 hover:border-emerald-500/50 hover:shadow-emerald-500/20 sm:w-[340px] md:w-[380px]"
+                className="group relative flex aspect-[16/11] w-[300px] shrink-0 flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-[#070d17] p-2 shadow-xl transition-all duration-300 hover:border-emerald-500/50 hover:shadow-emerald-500/20 sm:w-[360px] md:w-[400px]"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={slide.image_url}
                   alt={slide.alt_text || slide.caption || "TV repair work snapshot"}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-108"
+                  className="max-h-full max-w-full rounded-xl object-contain transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 {slide.caption ? (
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="inline-block rounded-lg bg-black/60 px-3 py-1.5 text-xs font-medium text-slate-200 backdrop-blur-md">
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <span className="inline-block truncate max-w-full rounded-lg bg-black/75 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-md border border-white/10">
                       {slide.caption}
                     </span>
                   </div>

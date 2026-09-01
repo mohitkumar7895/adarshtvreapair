@@ -41,19 +41,19 @@ export default async function GalleryPage() {
               {images.map((img) => (
                 <div
                   key={img.id}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-400/ hover:shadow-xl hover:shadow-emerald-500/"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10"
                 >
-                  <div className="aspect-4/3 overflow-hidden bg-slate-900">
+                  <div className="relative flex aspect-[16/11] items-center justify-center overflow-hidden bg-slate-950 p-2">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={img.image_url} 
                       alt={img.alt_text || img.caption || "TV repair work snapshot"} 
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-108" 
+                      className="max-h-full max-w-full rounded-xl object-contain transition-transform duration-500 group-hover:scale-105" 
                     />
                   </div>
                   {img.caption && (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent p-5 pt-12">
-                      <p className="text-sm font-semibold text-white">{img.caption}</p>
+                    <div className="border-t border-slate-100 bg-white p-4">
+                      <p className="text-sm font-semibold text-slate-800">{img.caption}</p>
                     </div>
                   )}
                 </div>

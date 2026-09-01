@@ -56,7 +56,7 @@ export function Header({
       {/* Main Solid Glass Header */}
       <div className="border-b border-white/10 bg-[#06120d] transition-colors">
         <div className="container-wide flex h-16 min-w-0 items-center justify-between gap-4 sm:h-20 lg:gap-8">
-          <div className="min-w-0 shrink">
+          <div className="shrink-0 flex items-center py-1">
             <Logo light name={name} src={settings["business.logo"]} />
           </div>
 
